@@ -1,0 +1,16 @@
+{
+  "type": "module",
+  "scripts": {
+    "dev": "pnpm -r --parallel run dev",
+    "build": "pnpm -r --parallel run build",
+    "build:node": "NITRO_PRESET=node-server pnpm -r --parallel run build",
+    "typegen": "cd sanity && npx sanity typegen generate"
+  },
+  "packageManager": "pnpm@10.12.4",
+  "dependencies": {
+    "@sanity/cli": "3.95.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2"
+  }
+}

@@ -1,0 +1,32 @@
+name: Deploy Sanity Studio
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'sanity/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2
+        with:
+          node-version: 22
+
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v3
+
+      - name: Install dependencies
+        run: |
+          cd sanity
+          pnpm install
+          pnpm install @sanity/cli
+
+      - name: Deploy Sanity Studio
+        run: |
+          cd sanity
+          SANITY_AUTH_TOKEN="${{ secrets.SANITY_AUTH_TOKEN }}" pnpm run deploy

@@ -1,0 +1,9 @@
+packages:
+  - nuxt
+  - sanity
+ignoredBuiltDependencies:
+  - '@tailwindcss/oxide'
+  - esbuild
+  - unrs-resolver
+overrides:
+  '@vercel/nft': '^0.29.4'
