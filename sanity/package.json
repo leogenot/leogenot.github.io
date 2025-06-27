@@ -15,18 +15,25 @@
     "sanity"
   ],
   "dependencies": {
+    "@focus-reactive/sanity-plugin-inline-svg-input": "^1.1.0",
+    "@sanity/icons": "^3.7.4",
+    "@sanity/ui": "^2.16.2",
+    "groq": "^3.95.0",
     "@sanity/vision": "^3.95.0",
     "react": "^19.1",
     "react-dom": "^19.1",
     "sanity": "^3.95.0",
-    "styled-components": "^6.1.18"
+    "sanity-plugin-documents-pane": "^2.4.0",
+    "sanity-plugin-media": "^3.0.3",
+    "styled-components": "^6.1.19"
   },
   "devDependencies": {
+    "@sanity/cli": "3.95.0",
     "@sanity/eslint-config-studio": "^5.0.2",
-    "@types/react": "^19.1",
-    "eslint": "^9.28",
-    "prettier": "^3.5",
-    "typescript": "^5.8"
+    "@types/react": "^19.1.8",
+    "eslint": "^9.29.0",
+    "prettier": "^3.6.2",
+    "typescript": "^5.8.3"
   },
   "prettier": {
     "semi": false,
