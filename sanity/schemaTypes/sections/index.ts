@@ -1,7 +1,9 @@
 import { defineField } from 'sanity'
 import Hero from './hero'
+import FeaturedProjects from './featured-projects'
 const sections = [
   Hero,
+  FeaturedProjects
 ]
 
 // Function to sort sections alphabetically

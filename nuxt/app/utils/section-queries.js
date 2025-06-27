@@ -1,12 +1,19 @@
 import * as fragments from './fragments'
 export const Hero = groq`_type == 'Hero' =>{
-    theme,
     title,
     text[]{
     ...${fragments.portableTextSimple},
   },
     links[] {
       _type == "link" => ${fragments.callToAction},
+    },
+  }
+`
+
+export const FeaturedProjects = groq`_type == 'FeaturedProjects' =>{
+    title,
+    projects[] {
+      _type == "reference" => ${fragments.pageDefaults},
     },
   }
 `
@@ -18,6 +25,7 @@ export const builder = groq`
     'id': _key,
     'data': {
       ${Hero},
+      ${FeaturedProjects},
     },
   }
 `

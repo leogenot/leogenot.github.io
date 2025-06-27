@@ -1,6 +1,6 @@
 import { defineField, defineType } from 'sanity'
 import { pageBuilderSections, pageSections } from '../sections'
-import { AddDocumentIcon } from '@sanity/icons'
+import { AsteriskIcon } from '@sanity/icons'
 import type { FieldGroupDefinition } from 'sanity'
 
 // Define groups separately for better organization
@@ -57,10 +57,10 @@ const seoFields = [
 
 // Main schema definition
 export default defineType({
-  name: 'page',
+  name: 'project',
   title: 'Project',
   type: 'document',
-  icon: AddDocumentIcon,
+  icon: AsteriskIcon,
   groups,
   fields: [...defaultFields, ...contentFields, ...seoFields],
 })

@@ -13,7 +13,7 @@ export default defineType({
       type: 'reference',
       title: 'Reference',
       to: [
-        { type: 'page' as const },
+        { type: 'project' as const },
         { type: 'frontpage' as const },
         // Add other document types that can be linked internally
       ],

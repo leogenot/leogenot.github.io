@@ -160,9 +160,14 @@ export type HeroProps = {
   text?: PortableTextBlock
   links?: LinkProps[]
 }
+export type FeaturedProjectsProps = {
+  title?: string
+  projects?: PageDefaults[]
+}
 
 export type PageSection =
   | { _type: 'Hero'; id: string; data: HeroProps }
+  | { _type: 'FeaturedProjects'; id: string; data: FeaturedProjectsProps }
 
 export type Builder = {
   pageSections?: PageSection[]

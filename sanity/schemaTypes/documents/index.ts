@@ -1,6 +1,6 @@
-import page from './page'
+import project from './project'
 
 
 // All Documents
-const documents = [page]
+const documents = [project]
 export default documents

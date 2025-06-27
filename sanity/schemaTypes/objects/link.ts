@@ -41,7 +41,7 @@ export default defineType({
       title: 'Page',
       type: 'reference',
       to: [
-        { type: 'page' },
+        { type: 'project' },
         { type: 'frontpage' },
       ],
       description: 'Select an internal page for the link (optional).',
