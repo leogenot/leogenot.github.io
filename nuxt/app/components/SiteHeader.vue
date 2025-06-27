@@ -2,7 +2,7 @@
 
 <template>
   <header
-    class="px-bleed text-ps sticky top-0 left-0 z-1 grid h-18 w-full grid-cols-3 border-b border-black font-sans font-medium uppercase"
+    class="text-ps bg-off-white sticky top-0 left-0 z-1 grid h-16 w-full grid-cols-3 border-b border-black font-sans font-medium uppercase lg:h-18"
   >
     <div class="menu-wrapper flex items-center justify-center border-r border-black">
       <NuxtLink to="#works" class="" aria-label="Works anchor link">Works</NuxtLink>

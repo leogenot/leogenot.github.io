@@ -22,7 +22,7 @@ watch(
 </script>
 
 <template>
-  <div class="bg-black">
+  <div>
     <PageSections v-if="data?.pageSections" :sections="data.pageSections" />
   </div>
 </template>

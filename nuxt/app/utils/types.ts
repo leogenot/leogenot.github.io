@@ -156,10 +156,9 @@ export type Seo = {
 }
 
 export type HeroProps = {
-  theme?: string
   title?: string
   text?: PortableTextBlock
-  media?: MediaProps
+  links?: LinkProps[]
 }
 
 export type PageSection =

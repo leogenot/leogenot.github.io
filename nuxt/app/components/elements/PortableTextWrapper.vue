@@ -5,7 +5,6 @@ import { NuxtLink } from '#components'
 type Props = {
   classes?: string
   content: unknown
-  animate?: boolean
 }
 
 defineProps<Props>()

@@ -2,10 +2,12 @@ import * as fragments from './fragments'
 export const Hero = groq`_type == 'Hero' =>{
     theme,
     title,
-    text[] {
-      ...${fragments.portableTextSimple},
+    text[]{
+    ...${fragments.portableTextSimple},
+  },
+    links[] {
+      _type == "link" => ${fragments.callToAction},
     },
-    ${fragments.media},
   }
 `
 

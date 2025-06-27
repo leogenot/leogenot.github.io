@@ -2,24 +2,29 @@
 
 @font-face {
   font-family: 'Geist';
+  font-weight: 300; /* light */
   font-display: block;
   src:
-    local('Geist'),
+    local('Geist Light'),
     url('/fonts/Geist-Light.woff2') format('woff2');
 }
+
 @font-face {
   font-family: 'Geist';
+  font-weight: 400; /* regular/normal */
   font-display: block;
   src:
-    local('Geist'),
-    url('/fonts/Geist-Medium.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Geist';
-  font-display: block;
-  src:
-    local('Geist'),
+    local('Geist Regular'),
     url('/fonts/Geist-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Geist';
+  font-weight: 500; /* medium */
+  font-display: block;
+  src:
+    local('Geist Medium'),
+    url('/fonts/Geist-Medium.woff2') format('woff2');
 }
 
 :root {
@@ -41,22 +46,22 @@
   --font-sans: 'Geist', sans-serif;
 
   --text-h1: 220px;
-  --text-h1--line-height: 1.84;
+  /* --text-h1--line-height: 1.84; */
   --tracking-h1: -0.06em;
 
   --text-h2: 92px;
-  --text-h2--line-height: 0.88;
+  /* --text-h2--line-height: 0.88; */
   --tracking-h2: -0.04em;
 
   --text-pl: 20px;
-  --text-pl--line-height: 2.6;
+  /* --text-pl--line-height: 2.6; */
   --tracking-pl: -0.01em;
 
   --text-pm: 18px;
-  --text-pm--line-height: 2.4;
+  /* --text-pm--line-height: 2.4; */
 
   --text-ps: 14px;
-  --text-ps--line-height: 2.2;
+  /* --text-ps--line-height: 2.2; */
 
   /**
   * colors
@@ -74,6 +79,8 @@
 html {
   --zoom-amount: 0.4;
   font-size: max(16px, calc(16px + 16 * var(--zoom-amount) * (100vw - 1440px) / 1440));
+  background-color: var(--color-off-white);
+  color: var(--color-black);
 }
 
 * {
@@ -93,10 +100,6 @@ body {
   .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
-  }
-
-  summary::-webkit-details-marker {
-    display: none;
   }
 }
 
