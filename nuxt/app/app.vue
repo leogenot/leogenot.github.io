@@ -67,11 +67,13 @@ const debouncedSetup = useDebounceFn(() => {
 }, 200)
 
 watch(innerWidth, debouncedSetup)
+
+document?.body?.classList.add('bg-off-white')
 </script>
 
 <template>
-  <main class="w-full overflow-x-clip">
-    <!-- <SiteHeader class="" /> -->
+  <main class="w-full overflow-x-clip text-black">
+    <SiteHeader />
 
     <VueLenis ref="lenisRef" :auto-raf="false" root :options="lenisOptions">
       <NuxtPage

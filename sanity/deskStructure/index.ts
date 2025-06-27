@@ -25,7 +25,7 @@ export const deskStructure = (S: StructureBuilder) =>
         .title('All')
         .items([
             singletonListItem(S, 'frontpage', 'Frontpage', HomeIcon),
-            S.documentTypeListItem('page').title('Page'),
+            S.documentTypeListItem('page').title('Projects'),
             S.divider(),
             singletonListItem(S, 'footer', 'Footer', ThLargeIcon),
             singletonListItem(S, 'settings', 'Settings', CogIcon),

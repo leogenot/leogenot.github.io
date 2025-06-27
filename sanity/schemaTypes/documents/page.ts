@@ -58,7 +58,7 @@ const seoFields = [
 // Main schema definition
 export default defineType({
   name: 'page',
-  title: 'Page',
+  title: 'Project',
   type: 'document',
   icon: AddDocumentIcon,
   groups,

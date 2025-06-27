@@ -1,25 +1,25 @@
-<script setup lang="ts">
-const route = useRoute()
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <header
-    :class="{
-      page: route.name === 'page-slug',
-    }"
-    class="px-bleed fixed top-0 left-0 z-99 flex h-14 w-full items-center justify-between font-mono text-xs uppercase select-none"
+    class="px-bleed text-ps sticky top-0 left-0 z-1 grid h-18 w-full grid-cols-3 border-b border-black font-sans font-medium uppercase"
   >
-    <div
-      class="breadcrumbs ease-in-out-quint relative inline-flex h-full gap-2 py-2 transition-transform duration-1000"
-      :class="{ 'max-lg:translate-x-[calc(50vw-50%-12px)]': route.name !== 'page-slug' }"
-    >
-      <NuxtLink to="/" class="flex h-full w-auto items-center" aria-label="Home"> Home </NuxtLink>
+    <div class="menu-wrapper flex items-center justify-center border-r border-black">
+      <NuxtLink to="#works" class="" aria-label="Works anchor link">Works</NuxtLink>
+    </div>
+    <div class="menu-wrapper flex items-center justify-center border-r border-black">
+      <NuxtLink
+        href="https://github.com/leogenot"
+        target="_blank"
+        class=""
+        aria-label="Go to my Github"
+        >@leogenot</NuxtLink
+      >
+    </div>
+    <div class="menu-wrapper flex items-center justify-center">
+      <NuxtLink href="mailto:leogenot@gmail.com" class="" aria-label="Link to send me an email"
+        >let's chat</NuxtLink
+      >
     </div>
   </header>
 </template>
-
-<style scoped>
-.safari-blur:before {
-  -webkit-backdrop-filter: blur(16px);
-}
-</style>
