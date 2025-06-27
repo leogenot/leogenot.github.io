@@ -12,8 +12,10 @@ export const Hero = groq`_type == 'Hero' =>{
 
 export const FeaturedProjects = groq`_type == 'FeaturedProjects' =>{
     title,
-    projects[] {
-      _type == "reference" => ${fragments.pageDefaults},
+    projects[]{
+      ...@->{
+        ...${fragments.pageDefaults},
+      }
     },
   }
 `

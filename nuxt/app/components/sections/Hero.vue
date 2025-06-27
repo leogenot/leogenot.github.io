@@ -1,9 +1,9 @@
 <script setup lang="ts">
-const props = defineProps<{ data: HeroProps }>()
+defineProps<{ data: HeroProps }>()
 </script>
 
 <template>
-  <section class="h-fit w-full overflow-clip pb-10">
+  <div class="h-fit w-full overflow-clip pb-10">
     <h1 class="px-bleed block w-full text-center font-sans text-[calc((100vw-2rem)/5)] font-light">
       {{ data.title }}
     </h1>
@@ -25,5 +25,5 @@ const props = defineProps<{ data: HeroProps }>()
         </li>
       </ul>
     </div>
-  </section>
+  </div>
 </template>
