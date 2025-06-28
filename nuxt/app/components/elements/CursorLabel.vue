@@ -4,6 +4,7 @@ import { useMouseInElement } from '@vueuse/core'
 type Props = {
   label: string
   hideTag?: boolean
+  labelColor?: string
 }
 
 defineProps<Props>()
@@ -25,8 +26,9 @@ const isInside = computed(() => !isOutside.value)
     <transition mode="out-in" name="fade">
       <span
         v-if="isInside && !hideTag"
-        class="bg-grey/20 absolute -top-2 left-4 flex items-center px-2 py-2 text-xs font-light text-black uppercase backdrop-blur-xs"
+        class="bg-grey/20 absolute -top-2 left-4 flex items-center px-2 py-2 text-xs font-light uppercase backdrop-blur-xs transition-colors"
         :style="{
+          color: labelColor || 'black',
           transform: `translate(${x}px, ${y}px)`,
         }"
       >

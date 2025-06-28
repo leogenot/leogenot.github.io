@@ -3,7 +3,7 @@ defineProps<{ data: HeroProps }>()
 </script>
 
 <template>
-  <div class="h-fit w-full overflow-clip pb-10">
+  <div class="h-fit w-full overflow-clip">
     <h1 class="px-bleed block w-full text-center font-sans text-[calc((100vw-2rem)/5)] font-light">
       {{ data.title }}
     </h1>

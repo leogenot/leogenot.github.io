@@ -33,12 +33,23 @@ function scrollNext() {
 function scrollPrev() {
   emblaApi.value?.scrollPrev()
 }
+
+const currentImagePaletteDominantColor = computed(() => {
+  console.log(
+    props.data.projects[selectedIndex.value]?.featuredMedia?.image?.palette?.dominant?.foreground,
+  )
+  return props.data.projects[selectedIndex.value]?.featuredMedia?.image?.palette?.dominant
+    ?.foreground
+})
 </script>
 
 <template>
   <div class="embla relative">
     <div class="pointer-events-none absolute inset-0">
-      <ElementsCursorLabel :label="data.projects[selectedIndex]?.title ?? 'View project'" />
+      <ElementsCursorLabel
+        :label="data.projects[selectedIndex]?.title ?? 'View project'"
+        :label-color="currentImagePaletteDominantColor"
+      />
     </div>
     <div class="embla__viewport" ref="emblaRef">
       <div class="embla__container">
