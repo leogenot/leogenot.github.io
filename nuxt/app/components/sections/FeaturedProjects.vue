@@ -44,7 +44,21 @@ const currentImagePaletteDominantColor = computed(() => {
 </script>
 
 <template>
-  <div class="embla relative">
+  <div class="embla relative" :style="{ '--current-color': currentImagePaletteDominantColor }">
+    <div
+      class="absolute right-0 z-[1] flex h-24 w-full flex-col items-center justify-between font-medium uppercase backdrop-blur-lg max-lg:bottom-0 lg:top-0 lg:h-full lg:w-24"
+    >
+      <span class="current-project-title transform-right -rotate-90">
+        [ {{ data.projects[selectedIndex]?.title ?? 'View project' }} ]
+      </span>
+      <NuxtLink :to="data.projects[selectedIndex]?.slug" class="current-project-link -rotate-90">
+        go
+      </NuxtLink>
+
+      <span class="current-project-date -rotate-90">
+        [ {{ data.projects[selectedIndex]?.title ?? getFullYear() }} ]
+      </span>
+    </div>
     <div class="pointer-events-none absolute inset-0">
       <ElementsCursorLabel
         :label="data.projects[selectedIndex]?.title ?? 'View project'"
@@ -52,7 +66,7 @@ const currentImagePaletteDominantColor = computed(() => {
       />
     </div>
     <div class="embla__viewport" ref="emblaRef">
-      <div class="embla__container">
+      <div class="embla__container relative">
         <div
           v-for="(project, index) in data.projects"
           :key="index"
