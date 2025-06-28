@@ -129,7 +129,7 @@ export type PageDefaults = {
   _createdAt: string
   _updatedAt: string
   title?: string
-  media?: MediaProps
+  featuredMedia?: MediaProps
   seo?: Seo
   slug: string
   publishedAt?: string

@@ -40,6 +40,13 @@ const defaultFields = [
     group: 'default',
     validation: (Rule) => Rule.required(),
   }),
+  defineField({
+    name: 'featuredMedia',
+    title: 'Featured media',
+    type: 'media-asset',
+    group: 'default',
+    validation: (Rule) => Rule.required(),
+  }),
 ] as const
 
 const contentFields = [

@@ -36,15 +36,23 @@ function scrollPrev() {
 </script>
 
 <template>
-  <div class="embla relative h-[50vh]">
+  <div class="embla relative">
     <div class="pointer-events-none absolute inset-0">
       <ElementsCursorLabel :label="data.projects[selectedIndex]?.title ?? 'View project'" />
     </div>
-    <div class="embla__viewport h-full" ref="emblaRef">
+    <div class="embla__viewport" ref="emblaRef">
       <div class="embla__container">
-        <div v-for="(project, index) in data.projects" :key="index" class="embla__slide relative">
-          {{ project.seo.image }}
-          <!-- <CommonImage :media="project.seo.image" :alt="project.title" /> -->
+        <div
+          v-for="(project, index) in data.projects"
+          :key="index"
+          class="embla__slide relative aspect-[4/5] lg:aspect-video"
+        >
+          <CommonMedia
+            :sizes="'80vw'"
+            :media="project.featuredMedia"
+            fill="both"
+            class="absolute top-0 left-0 size-full object-cover"
+          />
         </div>
       </div>
     </div>
@@ -53,13 +61,16 @@ function scrollPrev() {
 
 <style scoped>
 .embla {
-  overflow: hidden;
+  --slide-size: 100%;
 }
 .embla__container {
   display: flex;
+  touch-action: pan-y pinch-zoom;
 }
 .embla__slide {
-  flex: 0 0 100%;
+  transform: translate3d(0, 0, 0);
+  flex: 0 0 var(--slide-size);
   min-width: 0;
+  padding-left: var(--slide-spacing);
 }
 </style>

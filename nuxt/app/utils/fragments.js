@@ -125,7 +125,9 @@ export const pageDefaults = groq`
   _createdAt,
   _updatedAt,
   title,
-  'media':${media},
+  'featuredMedia':featuredMedia{
+    ...${mediaLight},
+    },
   'seo': {
     'title': coalesce(seo.title, title),
     'description': seo.description,
