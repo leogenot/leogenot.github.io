@@ -46,18 +46,15 @@ const currentImagePaletteDominantColor = computed(() => {
 <template>
   <div class="embla relative" :style="{ '--current-color': currentImagePaletteDominantColor }">
     <div
-      class="absolute right-0 z-[1] flex h-24 w-full flex-col items-center justify-between font-medium uppercase backdrop-blur-lg max-lg:bottom-0 lg:top-0 lg:h-full lg:w-24"
+      class="px-bleed text-off-white absolute right-0 bottom-0 z-[1] flex h-16 w-full items-center justify-between font-medium uppercase backdrop-blur-lg lg:hidden"
     >
-      <span class="current-project-title transform-right -rotate-90">
+      <div class="absolute top-0 left-0 h-[1px] w-full bg-black" />
+      <span class="current-project-title transform-right">
         [ {{ data.projects[selectedIndex]?.title ?? 'View project' }} ]
       </span>
-      <NuxtLink :to="data.projects[selectedIndex]?.slug" class="current-project-link -rotate-90">
-        go
+      <NuxtLink :to="data.projects[selectedIndex]?.slug" class="current-project-link">
+        <IconsArrowExternal />
       </NuxtLink>
-
-      <span class="current-project-date -rotate-90">
-        [ {{ data.projects[selectedIndex]?.title ?? getFullYear() }} ]
-      </span>
     </div>
     <div class="pointer-events-none absolute inset-0">
       <ElementsCursorLabel
@@ -67,10 +64,11 @@ const currentImagePaletteDominantColor = computed(() => {
     </div>
     <div class="embla__viewport" ref="emblaRef">
       <div class="embla__container relative">
-        <div
+        <NuxtLink
           v-for="(project, index) in data.projects"
           :key="index"
-          class="embla__slide relative aspect-[4/5] lg:aspect-video"
+          :to="project.slug"
+          class="embla__slide relative aspect-[4/5] w-full lg:max-h-[80vh]"
         >
           <CommonMedia
             :sizes="'80vw'"
@@ -78,7 +76,7 @@ const currentImagePaletteDominantColor = computed(() => {
             fill="both"
             class="absolute top-0 left-0 size-full object-cover"
           />
-        </div>
+        </NuxtLink>
       </div>
     </div>
   </div>

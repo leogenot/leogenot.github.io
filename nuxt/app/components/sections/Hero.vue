@@ -1,5 +1,6 @@
 <script setup lang="ts">
 defineProps<{ data: HeroProps }>()
+const borderRefs = useTemplateRef<HTMLDivElement>('borders')
 
 // ------- GSAP ANIMATION -------
 const { $SplitText, $gsap } = useNuxtApp()
@@ -89,9 +90,11 @@ onBeforeUnmount(() => {
       <span ref="titleTarget" class="split">{{ data.title }}</span>
     </h1>
     <div class="content grid border-black lg:grid lg:grid-cols-3 lg:border-t lg:border-b">
-      <div
-        class="text px-bleed text-pl border-black py-5 max-lg:border-b lg:col-start-1 lg:col-end-3 lg:border-r"
-      >
+      <div class="text px-bleed text-pl py-5 lg:col-start-1 lg:col-end-3">
+        <div
+          ref="borders"
+          class="absolute right-0 h-[1px] w-full bg-black max-lg:bottom-0 lg:top-0 lg:h-full lg:w-[1px]"
+        />
         <div class="portable-text-inner lg:max-w-2/3">
           <ElementsPortableTextWrapper v-if="data.text" :content="data.text" />
         </div>
