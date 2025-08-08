@@ -5,13 +5,49 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Léo Genot — Portfolio</title>
-    <meta name="description" content="Léo Genot portfolio showcasing all recent projects." />
+    <meta name="description"
+        content="Léo Genot Portfolio, showcasing web development projects using Nuxt, Vue.js, Sanity, Craft CMS, and more." />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Léo Genot — Portfolio" />
+    <meta property="og:description" content="Léo Genot Portfolio, showcasing web development projects." />
+    <meta property="og:url" content="https://leogenot.github.io" />
+    <meta property="og:image" content="https://leogenot.github.io/leogenot.jpg" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Léo Genot — Portfolio" />
+    <meta name="twitter:description" content="Léo Genot Portfolio, showcasing web development projects." />
+    <meta name="twitter:image" content="https://leogenot.github.io/leogenot.jpg" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Léo Genot",
+      "url": "https://leogenot.github.io",
+      "sameAs": [
+        "https://github.com/leogenot",
+        "https://www.linkedin.com/in/léo-genot-88580b176/"
+      ],
+      "jobTitle": "Web Developer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Freelance"
+      }
+    }
+    </script>
+
     <!-- Google Font: Doto -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Doto:wght@400;700&display=swap" rel="stylesheet">
+
     <!-- Tailwind (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
+
     <style>
         :root {
             color-scheme: light
@@ -38,7 +74,7 @@
 
         a:focus {
             outline: 2px dashed #000;
-            outline-offset: 2px
+            outline-offset: 2px;
         }
 
         h1,
@@ -55,75 +91,87 @@
 
         ol.custom-counter li {
             counter-increment: project-counter;
+            padding-left: 2.5em;
+            text-indent: -2.5em;
         }
 
         ol.custom-counter li::before {
             content: counter(project-counter, decimal-leading-zero) ". ";
-            font-weight: bold;
+            width: 2.5em;
+        }
+
+        /* Skip link for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #000;
+            color: #fff;
+            padding: 8px;
+            z-index: 100;
+        }
+
+        .skip-link:focus {
+            top: 0;
         }
     </style>
 </head>
 
 <body class="min-h-screen antialiased">
-    <main class="max-w-3xl mx-auto p-8">
+    <a href="#main-content" class="skip-link sr-only">Skip to main content</a>
+
+    <main id="main-content" class="max-w-3xl mx-auto p-4">
         <header class="mb-8 border-b border-black pb-4">
             <h1 class="text-4xl font-bold mb-2">Léo Genot</h1>
-            <p class="text-base leading-relaxed">I thrive in collaborative environments where design, engineering,
-                and product come together. Originally from southern France I
-                bring an international perspective and a strong adaptability.</p>
+            <p class="text-base leading-relaxed">
+                I thrive in collaborative environments where design, engineering, and product come together.
+                Originally from southern France, I bring an international perspective and strong adaptability.
+            </p>
         </header>
 
-        <section class="mb-8">
-            <h2 class="text-sm font-bold mb-3">Contact</h2>
+        <section aria-labelledby="contact-heading" class="mb-8">
+            <h2 id="contact-heading" class="text-sm font-bold mb-3">Contact</h2>
             <ul class="space-y-1">
-                <li><a href="https://github.com/leogenot" target="_blank" rel="noopener">Github</a></li>
-                <li><a href="https://www.linkedin.com/in/léo-genot-88580b176/" target="_blank"
-                        rel="noopener">LinkedIn</a></li>
-                <li><a href="mailto:leogenot@gmail.com">leogenot@gmail.com</a></li>
+                <li><a href="https://github.com/leogenot" target="_blank" rel="noopener noreferrer"
+                        aria-label="Visit my GitHub profile">GitHub Profile</a></li>
+                <li><a href="https://www.linkedin.com/in/léo-genot-88580b176/" target="_blank" rel="noopener noreferrer"
+                        aria-label="Visit my LinkedIn profile">LinkedIn Profile</a></li>
+                <li><a href="mailto:leogenot@gmail.com" aria-label="Send me an email at leogenot@gmail.com">Email Me</a>
+                </li>
             </ul>
         </section>
 
-        <section>
-            <h2 class="text-sm font-bold mb-3">Projects</h2>
+        <section aria-labelledby="projects-heading">
+            <h2 id="projects-heading" class="text-sm font-bold mb-3">Projects</h2>
             <ol class="custom-counter space-y-2">
-                <li><a href="https://springsummer.dk" target="_blank" rel="noopener">Spring/Summer — (Nuxt, Craft
-                        CMS)</a>
-                </li>
-                <li><a href="https://nitex.com" target="_blank" rel="noopener">Nitex — (Nuxt, Sanity)</a>
-                </li>
-                <li><a href="https://orca-labs.net" target="_blank" rel="noopener">Orca — (Laravel, Wordpress)</a>
-                </li>
-                <li><a href="https://vildmarken.dk" target="_blank" rel="noopener">Vildmarken — (Nuxt, Sanity)</a>
-                </li>
-                <li><a href="https://hempelfoundation.com" target="_blank" rel="noopener">Hempel — (Nuxt,
-                        Sanity)</a>
-                </li>
-                <li><a href="https://thetechcollective.eu" target="_blank" rel="noopener">The Tech Collective — (Nuxt,
-                        Craft CMS)</a>
-                </li>
-                <li><a href="https://implementconsultinggroup.com" target="_blank" rel="noopener">Implement — (Nuxt,
-                        Craft CMS)</a>
-                </li>
-                <li><a href="https://vandstrom.com" target="_blank" rel="noopener">Vandstrom — (Nuxt,
-                        Craft CMS)</a>
-                </li>
-                <li><a href="https://wsa.com" target="_blank" rel="noopener">WSAudiology — (Nuxt,
-                        Wordpress)</a>
-                </li>
-                <li><a href="https://shake-it.dk" target="_blank" rel="noopener">Shake-it — (Nuxt,
-                        Craft CMS, Shopify)</a>
-                </li>
-                <li><a href="https://sagacia.ca" target="_blank" rel="noopener">Sagacia — (VueJs,
-                        Craft CMS)</a>
-                </li>
-                <li><a href="https://leogenot.github.io/DeepDrawing/" target="_blank" rel="noopener">Generative Deep
-                        Learning — (VueJs, Python)</a>
-                </li>
+                <li><a href="https://springsummer.dk" target="_blank" rel="noopener noreferrer">Spring/Summer — Nuxt,
+                        Craft CMS</a></li>
+                <li><a href="https://nitex.com" target="_blank" rel="noopener noreferrer">Nitex — Nuxt, Sanity</a></li>
+                <li><a href="https://orca-labs.net" target="_blank" rel="noopener noreferrer">Orca — Laravel,
+                        WordPress</a></li>
+                <li><a href="https://vildmarken.dk" target="_blank" rel="noopener noreferrer">Vildmarken — Nuxt,
+                        Sanity</a></li>
+                <li><a href="https://hempelfoundation.com" target="_blank" rel="noopener noreferrer">Hempel — Nuxt,
+                        Sanity</a></li>
+                <li><a href="https://thetechcollective.eu" target="_blank" rel="noopener noreferrer">The Tech Collective
+                        — Nuxt, Craft CMS</a></li>
+                <li><a href="https://implementconsultinggroup.com" target="_blank" rel="noopener noreferrer">Implement —
+                        Nuxt, Craft CMS</a></li>
+                <li><a href="https://vandstrom.com" target="_blank" rel="noopener noreferrer">Vandstrom — Nuxt, Craft
+                        CMS</a></li>
+                <li><a href="https://wsa.com" target="_blank" rel="noopener noreferrer">WSAudiology — Nuxt,
+                        WordPress</a></li>
+                <li><a href="https://shake-it.dk" target="_blank" rel="noopener noreferrer">Shake-it — Nuxt, Craft CMS,
+                        Shopify</a></li>
+                <li><a href="https://sagacia.ca" target="_blank" rel="noopener noreferrer">Sagacia — Vue.js, Craft
+                        CMS</a></li>
+                <li><a href="https://leogenot.github.io/DeepDrawing/" target="_blank"
+                        rel="noopener noreferrer">Generative Deep Learning — Vue.js, Python</a></li>
             </ol>
         </section>
 
         <footer class="mt-12 text-xs border-t border-black pt-4">
-            <p>See you soon, I am probably working on something new or climbing somewhere new.</p>
+            <p>See you soon — I’m probably working on something new or climbing somewhere new.</p>
         </footer>
     </main>
 </body>
