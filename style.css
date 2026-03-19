@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+::selection {
+  background: #000;
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+/* Nav underline wipe — requires ::after pseudo-element */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #fff;
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+/* Injected by JS character splitting */
+.char {
+  display: inline-block;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .char,
+  .meta-inner,
+  .contact-link,
+  .contact-closing {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .name-line,
+  .contact-line {
+    opacity: 1 !important;
+  }
+
+  .hero-foot {
+    opacity: 1 !important;
+  }
+
+  .section-rule {
+    transform: scaleX(1) !important;
+  }
+}
