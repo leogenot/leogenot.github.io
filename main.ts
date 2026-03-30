@@ -1,6 +1,7 @@
 import Lenis from 'lenis'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import projects from './projects.json'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -40,9 +41,29 @@ function initLenis(): Lenis {
   return lenis
 }
 
+/* ─── Projects ────────────────────────────── */
+
+function renderProjects(): void {
+  const list = document.querySelector<HTMLOListElement>('.project-list')
+  if (!list) return
+
+  list.innerHTML = projects.map((p, i) => `
+    <li class="project-item border-b border-zinc-200">
+      <a href="${p.url}"
+        class="grid grid-cols-[2.5rem_1fr_auto] items-baseline gap-x-10 gap-y-3 py-4 no-underline text-inherit cursor-pointer max-md:grid-cols-[2rem_1fr] max-md:grid-rows-[auto_auto] max-md:gap-x-4 max-md:gap-y-1"
+        target="_blank" rel="noopener noreferrer">
+        <span class="text-[0.58rem] tracking-widest text-zinc-500 tabular-nums">${String(i + 1).padStart(2, '0')}</span>
+        <span class="text-[clamp(0.85rem,1.4vw,1.05rem)] font-normal tracking-[-0.005em] transition-[letter-spacing] duration-400 ease-[cubic-bezier(0.76,0,0.24,1)]">${p.name}</span>
+        <span class="text-[0.58rem] tracking-widest uppercase text-zinc-500 text-right max-md:col-start-2 max-md:text-left">${p.stack}</span>
+      </a>
+    </li>
+  `).join('')
+}
+
 /* ─── Init ────────────────────────────────── */
 
 function init(): void {
+  renderProjects()
 
   if (reducedMotion) {
     document.querySelectorAll<HTMLElement>('.name-line, .contact-line').forEach(el => { el.style.opacity = '1' })

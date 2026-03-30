@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Support Greenland",
+    "url": "https://supportgreenland.org",
+    "stack": "Laravel · WordPress"
+  },
+  {
+    "name": "Lemons and Olives",
+    "url": "https://lemonsandolives.com",
+    "stack": "Astro · Sanity"
+  },
+  {
+    "name": "Spring/Summer",
+    "url": "https://springsummer.dk",
+    "stack": "Nuxt · Craft CMS"
+  },
+  {
+    "name": "Nitex",
+    "url": "https://nitex.com",
+    "stack": "Nuxt · Sanity"
+  },
+  {
+    "name": "Orca",
+    "url": "https://orca-labs.net",
+    "stack": "Laravel · WordPress"
+  },
+  {
+    "name": "The Untamed",
+    "url": "https://theuntamed.com",
+    "stack": "Laravel · WordPress · WooCommerce"
+  },
+  {
+    "name": "Vildmarken",
+    "url": "https://vildmarken.dk",
+    "stack": "Nuxt · Sanity"
+  },
+  {
+    "name": "Hempel",
+    "url": "https://hempelfoundation.com",
+    "stack": "Nuxt · Sanity"
+  },
+  {
+    "name": "The Tech Collective",
+    "url": "https://thetechcollective.eu",
+    "stack": "Nuxt · Craft CMS"
+  },
+  {
+    "name": "Implement",
+    "url": "https://implementconsultinggroup.com",
+    "stack": "Nuxt · Craft CMS"
+  },
+  {
+    "name": "Vandstrom",
+    "url": "https://vandstrom.com",
+    "stack": "Nuxt · Craft CMS"
+  },
+  {
+    "name": "Norr11",
+    "url": "https://norr11.com",
+    "stack": "Shopify"
+  },
+  {
+    "name": "WSAudiology",
+    "url": "https://wsa.com",
+    "stack": "Nuxt · WordPress"
+  },
+  {
+    "name": "Shake-it",
+    "url": "https://shake-it.dk",
+    "stack": "Nuxt · Craft CMS · Shopify"
+  },
+  {
+    "name": "Coco Hotel",
+    "url": "https://coco-hotel.com",
+    "stack": "Nuxt · Craft CMS"
+  },
+  {
+    "name": "Rudolph Care",
+    "url": "https://rudolphcare.com",
+    "stack": "Nuxt · Craft CMS · Shopify"
+  },
+  {
+    "name": "Sagacia",
+    "url": "https://sagacia.ca",
+    "stack": "Vue.js · Craft CMS"
+  },
+  {
+    "name": "Generative Deep Learning",
+    "url": "https://leogenot.github.io/DeepDrawing/",
+    "stack": "Vue.js · Python"
+  }
+]
